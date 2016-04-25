@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>科学计算器</title>
     <style>
-        input.button1 {width: 44px; height: 30px; }
+        input.operate, input.num {width: 44px; height: 30px; }
+        input.operate:hover, input.num:hover {background-color: #dab273}
         #ui {background-color: #d9e4f1}
     </style>
 </head>
@@ -19,7 +20,7 @@
                 <tr>
                     <td colspan="2">
                         <fieldset id="outputDisplay" style="background-color: #ffffff; width: 488px; padding: 0 0; border-width: 1px; margin: 0 5px">
-                            <input id="exp" value="123+" readonly="readonly" style="width: 470px; text-align: right; border-style: none; font-size: 20px; padding: 0; margin: auto"><br />
+                            <input id="exp" value="" readonly="readonly" style="width: 470px; text-align: right; border-style: none; font-size: 20px; padding: 0; margin: auto"><br />
                             <input id="curNum" value="0" readonly="readonly" style="width: 470px; text-align: right; border-style: none; font-size: 40px; padding: 0; margin: auto">
                         </fieldset>
                     </td>
@@ -38,87 +39,87 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input class="button1" type="button" disabled="disabled">
+                                    <input class="operate" type="button" disabled="disabled">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="Inv" value="Inv">
+                                    <input class="operate" type="button" name="Inv" value="Inv" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="In" value="In">
+                                    <input class="operate" type="button" name="In" value="In" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="" value="(">
+                                    <input class="operate" type="button" name="" value="(" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="" value=")">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input class="button1" type="button" name="Int" value="Int">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="sinh" value="sinh">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="sin" value="sin">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="x2" value="x^2">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="n!" value="n!">
+                                    <input class="operate" type="button" name="" value=")" onclick="onClickBtn(this)">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input class="button1" type="button" name="dms" value="dms">
+                                    <input class="operate" type="button" name="Int" value="Int" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="cosh" value="cosh">
+                                    <input class="operate" type="button" name="sinh" value="sinh" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="cos" value="cos">
+                                    <input class="operate" type="button" name="sin" value="sin" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="xy" value="x^y">
+                                    <input class="operate" type="button" name="x2" value="x^2" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="" value="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input class="button1" type="button" name="pi" value="pi">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="tanh" value="tanh">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="tan" value="tan">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="x3" value="x^3">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="" value="">
+                                    <input class="operate" type="button" name="n!" value="n!" onclick="onClickBtn(this)">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input class="button1" type="button" name="FE" value="F-E">
+                                    <input class="operate" type="button" name="dms" value="dms" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="Exp" value="Exp">
+                                    <input class="operate" type="button" name="cosh" value="cosh" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="Mod" value="Mod">
+                                    <input class="operate" type="button" name="cos" value="cos" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="log" value="log">
+                                    <input class="operate" type="button" name="xy" value="x^y" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="10x" value="10^x">
+                                    <input class="operate" type="button" name="" value="" onclick="onClickBtn(this)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="num" type="button" name="pi" value="pi" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="tanh" value="tanh" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="tan" value="tan" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="x3" value="x^3" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="" value="" onclick="onClickBtn(this)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="operate" type="button" name="FE" value="F-E" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="Exp" value="Exp" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="Mod" value="Mod" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="log" value="log" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="10x" value="10^x" onclick="onClickBtn(this)">
                                 </td>
                             </tr>
                         </table>
@@ -127,98 +128,98 @@
                         <table class="keyboard" border="0" cellspacing="5" cellpadding="0" style="width: 245px">
                             <tr>
                                 <td>
-                                    <input class="button1" type="button" name="MC" value="MC">
+                                    <input class="operate" type="button" name="MC" value="MC" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="MR" value="MR">
+                                    <input class="operate" type="button" name="MR" value="MR" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="MS" value="MS">
+                                    <input class="operate" type="button" name="MS" value="MS" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="M+" value="M+">
+                                    <input class="operate" type="button" name="M+" value="M+" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="M-" value="M-">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input class="button1" type="button" name="arraw" value="<-">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="CE" value="CE">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="C" value="C">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="" value="">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="" value="">
+                                    <input class="operate" type="button" name="M-" value="M-" onclick="onClickBtn(this)">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input class="button1" type="button" name="7" value="7">
+                                    <input class="operate" type="button" name="arraw" value="<-" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="8" value="8">
+                                    <input class="operate" type="button" name="CE" value="CE" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="9" value="9">
+                                    <input class="operate" type="button" name="C" value="C" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="/" value="/">
+                                    <input class="operate" type="button" name="" value="" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="%" value="%">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input class="button1" type="button" name="4" value="4">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="5" value="5">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="6" value="6">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="*" value="*">
-                                </td>
-                                <td>
-                                    <input class="button1" type="button" name="" value="1/x">
+                                    <input class="operate" type="button" name="" value="" onclick="onClickBtn(this)">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input class="button1" type="button" name="1" value="1">
+                                    <input class="num" type="button" name="7" value="7" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="2" value="2">
+                                    <input class="num" type="button" name="8" value="8" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="3" value="3">
+                                    <input class="num" type="button" name="9" value="9" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="-" value="-">
+                                    <input class="operate" type="button" name="/" value="/" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="%" value="%" onclick="onClickBtn(this)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="num" type="button" name="4" value="4" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="num" type="button" name="5" value="5" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="num" type="button" name="6" value="6" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="*" value="*" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="" value="1/x" onclick="onClickBtn(this)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="num" type="button" name="1" value="1" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="num" type="button" name="2" value="2" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="num" type="button" name="3" value="3" onclick="onClickBtn(this)">
+                                </td>
+                                <td>
+                                    <input class="operate" type="button" name="-" value="-" onclick="onClickBtn(this)">
                                 </td>
                                 <td rowspan="2">
-                                    <input class="button1" type="button" name="=" value="=" style="height: 65px">
+                                    <input class="operate" type="button" name="=" value="=" style="height: 65px" onclick="onClickBtn(this)">
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <input class="button1" type="button" name="0" value="0" style="width: 93px">
+                                    <input class="num" type="button" name="0" value="0" style="width: 93px" onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="." value=".">
+                                    <input class="num" type="button" name="." value="." onclick="onClickBtn(this)">
                                 </td>
                                 <td>
-                                    <input class="button1" type="button" name="+" value="+">
+                                    <input class="operate" type="button" name="+" value="+" onclick="onClickBtn(this)">
                                 </td>
                             </tr>
                         </table>
@@ -230,5 +231,39 @@
     </div>
     <div id="footer"></div>
 </div>
+
+<script>
+    function onClickBtn(btn){
+        console.log("onClickBtn " + btn.name);
+        if(btn.classList[0] == "num"){
+            if(btn.value == "0") {
+                if (curResult != "0") {
+                    curResult += btn.value;
+                }
+            }else if(btn.value == "."){
+                if(curResult.indexOf(".") == -1){
+                    curResult += btn.value;
+                }
+            }else{
+                if(curResult == "0"){
+                    curResult = btn.value;
+                }else{
+                    curResult += btn.value;
+                }
+
+            }
+            showCurResult(curResult);
+        }else if(btn.classList[0] == "operate"){
+
+        }
+    }
+
+    function showCurResult(value){
+        console.log("showCurResult " + curResult);
+        document.getElementById("curNum").value = value;
+    }
+
+    var curResult = "0";
+</script>
 </body>
 </html>
