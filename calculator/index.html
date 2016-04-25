@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>科学计算器</title>
+    <style>
+        input.button1 {width: 44px; height: 30px; }
+        #ui {background-color: #d9e4f1}
+    </style>
 </head>
 <body>
 <div id="container">
@@ -10,34 +14,212 @@
         <h1 style="text-align: center">科学计算器</h1>
     </div>
     <div id="calculator" >
-        <form style="width: 520px; text-align:center; margin: 0 auto">
+        <form id = "ui" style="width: 520px; text-align:center; margin: 0 auto">
             <table id="main" border="0" cellpadding="0" cellspacing="5" style="margin: 0 auto">
                 <tr>
                     <td colspan="2">
-                        <fieldset id="outputDisplay" style="width: 486px; padding: 0 0; margin: 0 0">
-                            <input id="exp" value="123+" readonly="readonly" style="width: 480px; text-align: right; border-style: none; font-size: 20px; padding: 0; margin: auto"><br />
-                            <input id="curNum" value="0" readonly="readonly" style="width: 480px; text-align: right; border-style: none; font-size: 40px; padding: 0; margin: auto">
+                        <fieldset id="outputDisplay" style="background-color: #ffffff; width: 488px; padding: 0 0; border-width: 1px; margin: 0 5px">
+                            <input id="exp" value="123+" readonly="readonly" style="width: 470px; text-align: right; border-style: none; font-size: 20px; padding: 0; margin: auto"><br />
+                            <input id="curNum" value="0" readonly="readonly" style="width: 470px; text-align: right; border-style: none; font-size: 40px; padding: 0; margin: auto">
                         </fieldset>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <table border="0" cellspacing="0" cellpadding="0" style="width: 245px">
+                        <table class="keyboard" border="0" cellspacing="5" cellpadding="0" style="width: 245px">
                             <tr>
-                                <td>
-                                    <fieldset id="angleUnit" style="width: 241px; padding: 0 0; margin: 0 0">
+                                <td colspan="5">
+                                    <fieldset id="angleUnit" style="width: 241px; height: 30px; border-width: 1px; padding: 0 0; margin: 0 auto">
                                         <input type="radio" name="degree" value="degree" checked="checked">度
                                         <input type="radio" name="radian" value="radian">弧度
                                         <input type="radio" name="gradient" value="gradient">梯度
                                     </fieldset>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" disabled="disabled">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="Inv" value="Inv">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="In" value="In">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="" value="(">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="" value=")">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" name="Int" value="Int">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="sinh" value="sinh">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="sin" value="sin">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="x2" value="x^2">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="n!" value="n!">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" name="dms" value="dms">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="cosh" value="cosh">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="cos" value="cos">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="xy" value="x^y">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" name="pi" value="pi">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="tanh" value="tanh">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="tan" value="tan">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="x3" value="x^3">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" name="FE" value="F-E">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="Exp" value="Exp">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="Mod" value="Mod">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="log" value="log">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="10x" value="10^x">
+                                </td>
+                            </tr>
                         </table>
                     </td>
                     <td>
-                        <table>
+                        <table class="keyboard" border="0" cellspacing="5" cellpadding="0" style="width: 245px">
                             <tr>
-
+                                <td>
+                                    <input class="button1" type="button" name="MC" value="MC">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="MR" value="MR">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="MS" value="MS">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="M+" value="M+">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="M-" value="M-">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" name="arraw" value="<-">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="CE" value="CE">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="C" value="C">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="" value="">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" name="7" value="7">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="8" value="8">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="9" value="9">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="/" value="/">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="%" value="%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" name="4" value="4">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="5" value="5">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="6" value="6">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="*" value="*">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="" value="1/x">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="button1" type="button" name="1" value="1">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="2" value="2">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="3" value="3">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="-" value="-">
+                                </td>
+                                <td rowspan="2">
+                                    <input class="button1" type="button" name="=" value="=" style="height: 65px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input class="button1" type="button" name="0" value="0" style="width: 93px">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="." value=".">
+                                </td>
+                                <td>
+                                    <input class="button1" type="button" name="+" value="+">
+                                </td>
                             </tr>
                         </table>
                     </td>
